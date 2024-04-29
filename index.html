@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>TaskNest -To Do List</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> 
+    <script src= "https://code.jquery.com/jquery-3.1.1.min.js">  </script> 
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"> </script> 
+
+</head>
+<body>
+    <!-- boy icon -  <img width="40" height="40" src="https://img.icons8.com/doodle/48/boy.png" alt="boy"/> -->
+
+    <div class="wrapper">
+
+        <div class="screen-backdrop"></div>
+        <div class="home-screen screen">
+                    
+            <!-- profile and weather section -->
+            <section class="header">
+                <div class="profile">
+                    <img class="profile-image" width="30" height="30" src="assets/category/girl.png" alt="boy"/>
+                </div>
+                <div class="weather">
+                    <div>
+                        <img class="weather-icon" width="30" height="30" src="" alt="sun"/>
+                    </div>
+                    <div class="weather-number">27°C</div>
+                </div>
+            </section>
+
+            <!-- greetings section -->
+            <section class="greetings">
+                <p class="lead" id="greetingOfDay">Good Morning,</p>
+                <h1 class="h1" id="nameOfUser">Harshita Phadtare</h1>
+            </section>
+
+            <!-- weekly log section -->
+            <section class="week">
+                <div class="container">
+                    <div class="cell sundayCell" >
+                        <div class="day">S</div>
+                        <div class="date" id="sunday">09</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell mondayCell">
+                        <div class="day">M</div>
+                        <div class="date" id="monday">10</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell tuesdayCell">
+                        <div class="day">T</div>
+                        <div class="date" id="tuesday">11</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell wednesdayCell">
+                        <div class="day">W</div>
+                        <div class="date" id="wednesday">12</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell thursdayCell">
+                        <div class="day">T</div>
+                        <div class="date" id="thursday">13</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell fridayCell">
+                        <div class="day">F</div>
+                        <div class="date" id="friday">14</div>
+                        <div class="circle"></div>
+                    </div>
+                    <div class="cell saturdayCell">
+                        <div class="day">S</div>
+                        <div class="date" id="saturday">15</div>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- header for todo list for today -->
+            <section class="todayHeader">
+                <div class="today">Today Task
+                <span class="task-update">
+                    (<span class="total-tasks-today">21</span> Tasks)
+                </span> 
+                </div>
+            </section>
+
+            <!-- categories -->
+            <div class="categories-wrapper">
+                <div class="categories">
+
+                    <!-- <div class="category">
+                        <div class="left">
+                            <img src="./assets/category/girl.png" alt="personal-image">
+                            <div class="content">
+                                <h1>Personal</h1>
+                                <p>5 Tasks </p>
+                            </div>
+                        </div>
+
+                        <div class="options">
+                            <div class="toggle-btn">
+                                <img src="./assets/option.png" alt="options button">
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+        </div> 
+
+        <!-- tasks screen -->
+        <div class="screen category-screen">
+            <div class="head-wrapper">
+                <div class="back-btn">
+                    <img width="20" src="assets\back-arrow.png" alt="">
+                </div>
+                <div class="options">
+                    <img width="20" src="./assets/option-white.png" alt="">
+                </div>
+            </div>
+            <div class="category-details">
+                <img src="assets/category/girl.png" alt="girl" id="category-img">
+                <div class="details">
+                    <p class="category-tasks">8 tasks </p>
+                    <h1 class="category-title">Personal</h1>
+                </div>
+            </div>
+            <div class="tasks-wrapper">
+                <div class="tasks">
+                    <div class="task-wrapper">
+                        <label for="task" class="task">
+                            <input type="checkbox" name="" id="task">
+                            <span class="checkmark">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M4.5 12.75l6 6 9-13.5"/>
+                                </svg>
+                            </span>
+                            <p>Buy a new car</p>
+                        </label>
+                        <div class="delete">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                            />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- add task btn -->
+        <div class="add-task-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"/>
+            </svg>
+        </div>
+
+        <!-- backdrop -->
+        <div class="black-backdrop"></div>
+
+        <!-- add task form -->
+        <div class="add-task">
+            <div class="add-task-backdrop"></div>
+            <h1 class="heading">Add Task</h1>
+            <div class="input-group">
+                <label for="task-input">Task</label>
+                <input type="text" id="task-input" required>
+            </div>
+            <div class="input-group">
+                <label for="category-select">Category</label>
+                <select name="" id="category-select">
+
+                </select>
+            </div>
+            <div class="btns">
+                <button class="cancel-btn">Cancel</button>
+                <button class="add-btn">Add</button>
+            </div>
+        </div>
+   
+    </div>
+
+    
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+<script type="module" src="./script.js"></script>
+</html>
